@@ -1,0 +1,28 @@
+JSX in Depth
+
+JSX just provides syntactic sugar for React.createdElement(components, props, ...children) function
+
+<myButton color="blue" shadowSize={2}>Click me </myButton>
+
+compiles into
+
+React.createElement(
+  MyButton,
+  {color: 'blue', shadowSize: 2}, // seems like css is wrapped in {}
+  'Click Me'
+)
+
+can use self-closing form of tag is there are no children
+
+ex:
+<div className="sidebar" />
+
+compiles into
+
+React.createElement(
+  'div',                   // seems to be the anchor tag
+  {className: 'sidebar'}, // css and classes
+  null                    // text (there is none so = null)
+)
+
+online Babel compiler will test out how specific JSX converts into JS
